@@ -1,0 +1,12 @@
+<launch>
+  <arg name="map" default="$(find reem_maps)/config"/>
+
+  <!-- Setup map -->
+  <node pkg="reem_maps" type="map_setup.py" name="map_setup">
+    <param name="map" value="$(arg map)"/>
+  </node>
+
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)/map.yaml"/>
+
+</launch>

@@ -1,0 +1,16 @@
+<launch>
+
+  <arg name="mapping" default="gmapping"/>
+
+  <arg name="planner" default="base"/>
+  <arg name="local_planner" default="trajectory"/>  <!-- dwa, trajectory -->
+
+  <!-- SLAM -->
+  <include file="$(find reem_2dnav)/launch/mapping_$(arg mapping).launch"/>
+
+  <!-- Planning -->
+  <include file="$(find reem_2dnav)/launch/move_$(arg planner).launch">
+    <arg name="local_planner" value="$(arg local_planner)"/>
+  </include>
+
+</launch>
