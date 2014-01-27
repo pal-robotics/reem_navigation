@@ -5,6 +5,7 @@
   <description>REEM-specific launch files needed to run
     navigation on the REEM robot.</description>
   <maintainer email="luca.marchionni@pal-robotics.com">Luca Marchionni</maintainer>
+  <maintainer email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</maintainer>
   <maintainer email="paul.mathieu@pal-robotics.com">Paul Mathieu</maintainer>
   <license>Modified BSD</license>
   <author email="luca.marchionni@pal-robotics.com">Luca Marchionni</author>
