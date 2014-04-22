@@ -559,7 +559,7 @@ Visualization Manager:
               Color: 25; 255; 0
               Enabled: true
               Name: Plan
-              Topic: move_base/NavfnROS/plan
+              Topic: move_base/FollowPlanner/plan
               Value: true
             - Alpha: 0.7
               Class: rviz/Map
