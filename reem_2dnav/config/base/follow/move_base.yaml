@@ -1,0 +1,5 @@
+base_local_planner: base_local_planner/TrajectoryPlannerROS
+base_global_planner: follow_planner/FollowPlanner
+
+global_costmap:
+  global_frame: odom
