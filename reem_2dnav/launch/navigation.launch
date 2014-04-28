@@ -1,22 +1,26 @@
 <launch>
 
-  <arg name="planner"       default="base"/>
-  <arg name="local_planner" default="trajectory"/>  <!-- dwa, trajectory -->
-  <arg name="localization"  default="amcl"/>
+  <arg name="state" default="localization"/>
+
+  <arg name="local_planner"  default="trajectory"/>
+  <arg name="global_planner" default="navfn"/>
+  <arg name="localization"   default="amcl"/>
+  <arg name="mapping"        default="gmapping"/>
 
   <arg name="map" default="$(find reem_maps)/configurations/simple_office"/>
 
-  <!-- Map -->
-  <include file="$(find reem_maps)/launch/map.launch">
+  <!-- Localization or Mapping state -->
+  <include file="$(find reem_2dnav)/launch/$(arg state).launch">
+    <arg name="localization" value="$(arg localization)"/>
+    <arg name="mapping"      value="$(arg mapping)"/>
+
     <arg name="map" value="$(arg map)"/>
   </include>
 
-  <!-- Localization -->
-  <include file="$(find reem_2dnav)/launch/localization_$(arg localization).launch"/>
-
   <!-- Planning -->
-  <include file="$(find reem_2dnav)/launch/move_$(arg planner).launch">
+  <include file="$(find reem_2dnav)/launch/move_base.launch">
     <arg name="local_planner" value="$(arg local_planner)"/>
+    <arg name="global_planner" value="$(arg global_planner)"/>
   </include>
 
 </launch>

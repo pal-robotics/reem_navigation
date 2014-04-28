@@ -1,26 +1,29 @@
 TrajectoryPlannerROS:
   # Acceleration limits
-  acc_lim_th: 3.2
-  acc_lim_x: 2.5
+  acc_lim_th: 1.0 
+  acc_lim_x: 0.8
   acc_lim_y: 0.0
 
   # Velocity limits
-  max_vel_x: 1.0
+  max_vel_x: 1.5
   min_vel_x: 0.1
-  max_rotational_vel: 3.0
+  max_rotational_vel: 1.7
   min_in_place_rotational_vel: 0.4
 
   # Notice that this velocity is set to be negative. A bit confusing admittedly.
   escape_vel: -0.1
+  
+  holonomic_robot: false 
 
-  holonomic_robot: false
+  # Since we're NOT using a holonomic robot, we won't set the set of y velocities to sample
+  #y_vels: [-0.3, -0.1, 0.1, -0.3]
 
   # Tolerance on achieving a goal
   xy_goal_tolerance: 0.2
   yaw_goal_tolerance: 0.2
 
   # Configure how long and with what granularity we'll forward simulate trajectories
-  sim_time: 1.7
+  sim_time: 2.7
   sim_granularity: 0.025
   vx_samples: 10
   vtheta_samples: 20
@@ -36,6 +39,9 @@ TrajectoryPlannerROS:
 
   # How far the robot must travel before oscillation flags are reset
   oscillation_reset_dist: 0.1
+
+  # Eat up the plan as the robot moves along it
+  prune_plan: true
 
   meter_scoring: true
   publish_cost_grid: true
