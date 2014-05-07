@@ -1,0 +1,16 @@
+<launch>
+
+  <arg name="localization"  default="amcl"/>
+
+  <arg name="map"     default="$(find reem_maps)/config"/>
+  <arg name="symlink" default="$(find reem_maps)/config"/>
+
+  <arg name="mapping" default=""/>
+
+  <!-- Map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)/map.yaml"/>
+
+  <!-- Localization -->
+  <include file="$(find reem_2dnav)/launch/localization_$(arg localization).launch"/>
+
+</launch>

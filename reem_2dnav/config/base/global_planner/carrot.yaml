@@ -1,3 +1,5 @@
+base_global_planner: carrot_planner/CarrotPlanner
+
 CarrotPlanner:
   transform_tolerance: 0.2
 
