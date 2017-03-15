@@ -21,8 +21,6 @@ local_costmap:
   plugins:
   - name: laser_layer
     type: 'costmap_2d::ObstacleLayer'
-  - name: footprint_layer
-    type: 'costmap_2d::FootprintLayer'
   - name: inflation_layer
     type: 'costmap_2d::InflationLayer'
 
