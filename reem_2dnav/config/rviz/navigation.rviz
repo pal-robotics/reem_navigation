@@ -1072,7 +1072,7 @@ Visualization Manager:
           Class: rviz/Map
           Color Scheme: map
           Draw Behind: true
-          Enabled: false
+          Enabled: true
           Name: Map
           Topic: map
           Value: false
